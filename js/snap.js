@@ -8,6 +8,7 @@ function startsnap() {
     var inesnd = new Audio("music/inevitable.mp3");
     inesnd.play();
     setTimeout(function () {
+        inesnd.pause();
         var snd = new Audio("music/Tremendo-cumbiote.mp3");
         snd.play();
     }, 5000);
