@@ -5,15 +5,18 @@ var canvasCount = 35;
 function startsnap() {
     var butt = document.getElementById("snap-btn");
     butt.style.display = 'none';
-    var snd = new Audio("music/Tremendo-cumbiote.mp3");
-    snd.play();
-
+    var inesnd = new Audio("music/inevitable.mp3");
+    inesnd.play();
     setTimeout(function () {
-        snap()
+        var snd = new Audio("music/Tremendo-cumbiote.mp3");
+        snd.play();
     }, 5000);
     setTimeout(function () {
+        snap()
+    }, 10000);
+    setTimeout(function () {
         snd.pause();
-    }, 30000);
+    }, 40000);
 }
 
 function snap() {
