@@ -1,13 +1,17 @@
-
 var imageDataArray = [];
 var canvasCount = 35;
 
 
 function musicsnap() {
+    var butt = document.getElementById("start-btn");
+    butt.style.display = 'none';
     var snd = new Audio("music/Tremendo-cumbiote.mp3");
     snd.play();
-    setTimeout(function () { snap() }, 5000);
+    setTimeout(function () {
+        snap()
+    }, 5000);
 }
+
 function snap() {
     html2canvas($(".content")[0]).then(canvas => {
         //Create a canvas with the content
@@ -37,16 +41,22 @@ function snap() {
         $(".dust").each(function (index) {
             animateBlur($(this), 0.8, 800);
             setTimeout(() => {
-                animateTransform($(this), 100, -100, chance.integer({ min: -15, max: 15 }), 800 + (110 * index));
+                animateTransform($(this), 100, -100, chance.integer({
+                    min: -15,
+                    max: 15
+                }), 800 + (110 * index));
             }, 70 * index);
             //remove the canvas from DOM tree when faded
-            $(this).delay(70 * index).fadeOut((110 * index) + 800, "easeInQuint", () => { $(this).remove(); });
+            $(this).delay(70 * index).fadeOut((110 * index) + 800, "easeInQuint", () => {
+                $(this).remove();
+            });
         });
     });
 }
 
 function weightedRandomDistrib(peak) {
-    var prob = [], seq = [];
+    var prob = [],
+        seq = [];
     for (let i = 0; i < canvasCount; i++) {
         prob.push(Math.pow(canvasCount - Math.abs(peak - i), 3));
         seq.push(i);
@@ -56,7 +66,11 @@ function weightedRandomDistrib(peak) {
 
 function animateBlur(elem, radius, duration) {
     var r = 0;
-    $({ rad: 0 }).animate({ rad: radius }, {
+    $({
+        rad: 0
+    }).animate({
+        rad: radius
+    }, {
         duration: duration,
         easing: "easeOutQuad",
         step: function (now) {
@@ -66,9 +80,18 @@ function animateBlur(elem, radius, duration) {
         }
     });
 }
+
 function animateTransform(elem, sx, sy, angle, duration) {
     var td = tx = ty = 0;
-    $({ x: 0, y: 0, deg: 0 }).animate({ x: sx, y: sy, deg: angle }, {
+    $({
+        x: 0,
+        y: 0,
+        deg: 0
+    }).animate({
+        x: sx,
+        y: sy,
+        deg: angle
+    }, {
         duration: duration,
         easing: "easeInQuad",
         step: function (now, fx) {
@@ -84,6 +107,7 @@ function animateTransform(elem, sx, sy, angle, duration) {
         }
     });
 }
+
 function createBlankImageData(imageData) {
     for (let i = 0; i < canvasCount; i++) {
         let arr = new Uint8ClampedArray(imageData.data);
@@ -93,6 +117,7 @@ function createBlankImageData(imageData) {
         imageDataArray.push(arr);
     }
 }
+
 function newCanvasFromImageData(imageDataArray, w, h) {
     var canvas = document.createElement('canvas');
     canvas.width = w;
