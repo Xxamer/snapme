@@ -2,14 +2,18 @@ var imageDataArray = [];
 var canvasCount = 35;
 
 
-function musicsnap() {
+function startsnap() {
     var butt = document.getElementById("start-btn");
     butt.style.display = 'none';
     var snd = new Audio("music/Tremendo-cumbiote.mp3");
     snd.play();
+    
     setTimeout(function () {
         snap()
     }, 5000);
+    setTimeout(function () {
+        snd.pause();
+    }, 35000);
 }
 
 function snap() {
@@ -124,7 +128,6 @@ function newCanvasFromImageData(imageDataArray, w, h) {
     canvas.height = h;
     tempCtx = canvas.getContext("2d");
     tempCtx.putImageData(new ImageData(imageDataArray, w, h), 0, 0);
-
     return canvas;
 
 }

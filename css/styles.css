@@ -29,6 +29,7 @@
     border-radius: 10px;
     background:url("/img/thanos.jpg") white 15px no-repeat;
     background-size: 40px;
+    display: none;
   }
   .dust {
     position: absolute;
