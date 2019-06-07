@@ -132,5 +132,5 @@ function newCanvasFromImageData(imageDataArray, w, h) {
     tempCtx = canvas.getContext("2d");
     tempCtx.putImageData(new ImageData(imageDataArray, w, h), 0, 0);
     return canvas;
-
+    
 }
