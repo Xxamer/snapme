@@ -13,7 +13,7 @@ function startsnap() {
     }, 5000);
     setTimeout(function () {
         snd.pause();
-    }, 35000);
+    }, 30000);
 }
 
 function snap() {
