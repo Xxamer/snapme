@@ -3,11 +3,11 @@ var canvasCount = 35;
 
 
 function startsnap() {
-    var butt = document.getElementById("start-btn");
+    var butt = document.getElementById("snap-btn");
     butt.style.display = 'none';
     var snd = new Audio("music/Tremendo-cumbiote.mp3");
     snd.play();
-    
+
     setTimeout(function () {
         snap()
     }, 5000);

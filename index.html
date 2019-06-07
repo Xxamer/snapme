@@ -18,11 +18,11 @@
 </head>
 
 <body class="center">
-    <p><input type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display: none;"></p>
-    <p><label class="button-image" for="file" style="cursor: pointer;">Upload Image</label></p>
-    <button id="start-btn" onclick="startsnap()">SNAP ME!</button>
+    <p><input id="file-input" type="file" accept="image/*" name="image"  onchange="loadFile(event)"></p>
+    <p><label id="button-upload" class="button-image" for="file-input">Upload the image</label></p>
+    <button id="snap-btn" onclick="startsnap()">SNAP IT!</button>
     <div class="content">
-        <img id="output" width="500" />
+        <img id="output" width="800"/>
     </div>
 </body>
 
