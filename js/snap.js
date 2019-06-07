@@ -8,12 +8,11 @@ function startsnap() {
     var inesnd = new Audio("music/inevitable.mp3");
     inesnd.play();
     setTimeout(function () {
-        inesnd.pause();
         var snd = new Audio("music/Tremendo-cumbiote.mp3");
         snd.play();
     }, 5000);
     setTimeout(function () {
-        snap();
+        snap()
     }, 10000);
     setTimeout(function () {
         snd.pause();
@@ -133,5 +132,5 @@ function newCanvasFromImageData(imageDataArray, w, h) {
     tempCtx = canvas.getContext("2d");
     tempCtx.putImageData(new ImageData(imageDataArray, w, h), 0, 0);
     return canvas;
-
+    
 }
