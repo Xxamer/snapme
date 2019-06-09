@@ -7,11 +7,13 @@ function startsnap() {
     butt.style.display = 'none';
     var snd = new Audio("music/Tremendo-cumbiote.mp3");
     var inesnd = new Audio("music/inevitable.mp3");
+    inesnd.volume = 0.1
     inesnd.play();
     setTimeout(function () {
         inesnd.pause();
         
         snd.play();
+        snd.volume = 0.05
     }, 5000);
     setTimeout(function () {
         snap()
