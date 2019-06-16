@@ -13,6 +13,7 @@
     <script src="js/libraries/chance.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
     <script src="js/libraries/jquery-ui.min.js"></script>
+    <script src="js/credentials.js"></script>
     <!--Javascript files-->
     <script src="js/snap.js"></script>
     <script src="js/uploadimage.js"></script>
@@ -20,11 +21,21 @@
 </head>
 
 <body class="center">
-    <p><input id="file-input" type="file" accept="image/*" name="image"  onchange="loadFile(event)"></p>
+    <p><input id="file-input" type="file" accept="image/*" name="image" onchange="loadFile(event)"></p>
     <p><label id="button-upload" class="button-image" for="file-input">Upload the image</label></p>
     <button id="snap-btn" onclick="startsnap()">SNAP IT!</button>
     <div class="content">
-        <img id="output" width="800"/>
+        <img id="output" width="800" />
+        <p> <small> Nota* esta página es incompatible con smartphones, sorry about that</small></p>
+        <p id="text">
+            Si quieres ver el código usado para realizar esta página se puede encontrar en Github de manera pública.
+        </p>
+        
+
+    </div>
+    <a href="https://github.com/Xxamer/snapme"> <img width="100px" height="100px" src="img/github-logo.svg"></img></a>
+    <div class="mylink">
+        <a target="_blank" href="https://github.com/Xxamer">Coded by Christian Granado</a>
     </div>
 </body>
 

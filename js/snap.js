@@ -91,7 +91,6 @@ function animateBlur(elem, radius, duration) {
         }
     });
 }
-
 function animateTransform(elem, sx, sy, angle, duration) {
     var td = tx = ty = 0;
     $({
